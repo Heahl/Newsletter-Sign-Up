@@ -15,7 +15,6 @@ newsletterForm.addEventListener("submit", function (e) {
   if (validateEmail(email)) {
     // Display success message
     displaySuccessMessage(email); 
-    console.log(validatedMail);// Call the function to show the success message
   } else {
     // Show email validation error
     emailInput.setCustomValidity("Please enter a valid email address.");
@@ -28,18 +27,15 @@ function displaySuccessMessage(email) {
   confirmedEmail.textContent = email;
   // Show the modal container 
   document.getElementById("modal-container").style.display = "flex";
-  console.log("displaysuccesmessage");
 }
 
 // Function to validate email using regex
 function validateEmail(email) {
   const re = /\S+@\S+\.\S+/;
   return re.test(email);
-  console.log("validated");
 }
 
 // Dismiss success message
 function dismissMessage() {
   successMessage.style.display = "none";
-  console.log("dismissed");
 }}  
